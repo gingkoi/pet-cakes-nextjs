@@ -8,7 +8,7 @@ import { useState } from "react";
 import links from "./links";
 
 const Header = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const [nav, setNav] = useState(false);
   const handleClick = (index: number) => {
     setActive(index);
@@ -27,13 +27,21 @@ const Header = () => {
               width={160}
               height={160}
               alt="Petisserie Logo"
+              priority
             />
           </div>
           <Link
             href={"/"}
-            className="hidden lg:flex justify-center items-center font-oleo text-6xl text-primary underline"
+            className="hidden lg:flex justify-center items-center"
           >
-            Petissier
+            <div className="grid">
+              <p className="font-oleo text-6xl text-primary underline">
+                Petissier
+              </p>
+              <p className="text-center font-poppin font-light my-1 text-gray-600">
+                A DOG & CAT PASTRY CO.
+              </p>
+            </div>
           </Link>
           <div className="hidden lg:flex justify-end items-center space-x-8">
             <FaShoppingCart
@@ -52,6 +60,7 @@ const Header = () => {
         <div className="hidden lg:flex justify-around items-end space-x-10 mt-8">
           {links.map((link, index) => (
             <Link
+              key={index}
               href={link.href}
               onClick={() => handleClick(index)}
               className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${
@@ -75,6 +84,7 @@ const Header = () => {
         >
           {links.map((link, index) => (
             <Link
+              key={index}
               href={link.href}
               onClick={() => handleClick(index)}
               className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${

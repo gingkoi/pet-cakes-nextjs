@@ -16,11 +16,11 @@ const links = [
     link: "Party Supplies",
   },
   {
-    href: "/",
+    href: "/about",
     link: "About",
   },
   {
-    href: "/",
+    href: "/contact",
     link: "Contact Us",
   },
   {
