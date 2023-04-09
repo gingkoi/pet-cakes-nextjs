@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { BsFacebook, BsInstagram } from "react-icons/bs";
+import Socials from "@/components/Socials";
 
 const About = () => {
   return (
-    <div className="lg:max-w-[800px] lg:mx-auto font-poppin py-24 px-5">
+    <div className="lg:max-w-[800px] lg:mx-auto font-poppin py-24 px-5 transition_nav">
       <div>
         <h1 className="text-center text-5xl font-bold text-primary">
           About Us
@@ -78,27 +78,7 @@ const About = () => {
           alt="certificate"
           className="my-8 flex justify-center items-center max-w-[500px] mx-auto md:w-[500px] md:h-[700px] w-[300px] h-[400px]"
         />
-        <div>
-          <p className="text-center text-primary font-semibold text-3xl my-8">
-            Follow us on Social & App Stores:
-          </p>
-          <div className="flex items-center justify-center space-x-8 my-3">
-            <a
-              href="https://www.facebook.com/petissier.sg"
-              target="blank"
-              className="bg-primary p-5 rounded-full text-white hover:scale-110 duration-300"
-            >
-              <BsFacebook size={50} />
-            </a>
-            <a
-              href="https://www.instagram.com/petissier.sg/"
-              target="blank"
-              className="bg-primary p-5 rounded-full text-white hover:scale-110 duration-300"
-            >
-              <BsInstagram size={50} />
-            </a>
-          </div>
-        </div>
+        <Socials />
       </div>
     </div>
   );

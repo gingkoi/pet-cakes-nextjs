@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import links from "./links";
 
@@ -75,10 +76,10 @@ const Header = () => {
           className="flex lg:hidden justify-center my-3"
           onClick={handleToggle}
         >
-          <GiHamburgerMenu size={35} />
+          {!nav ? <GiHamburgerMenu size={35} /> : <AiOutlineClose size={35} />}
         </div>
         <div
-          className={`grid border-t-2 border-black text-center ${
+          className={`grid border-t-2 border-black text-center z-50 absolute bg-white w-full border-b-2 ${
             nav ? "grid transition_nav lg:hidden" : "hidden"
           }`}
         >
