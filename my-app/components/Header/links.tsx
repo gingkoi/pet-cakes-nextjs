@@ -15,18 +15,36 @@ const links = [
     href: "/",
     link: "Party Supplies",
   },
+];
+
+const termsCondition = [
   {
-    href: "/about",
-    link: "About",
+    href: "/collection-and-delivery",
+    link: "Collection & Delivery",
   },
   {
-    href: "/contact",
-    link: "Contact Us",
+    href: "/terms-and-conditions",
+    link: "Terms And Conditions",
   },
   {
-    href: "/",
-    link: "T & C",
+    href: "/return-refund-policy",
+    link: "Return & Return Policy",
+  },
+  {
+    href: "/privacy-policy",
+    link: "Privacy Policy",
+  },
+  {
+    href: "/faq",
+    link: "FAQ",
   },
 ];
 
-export default links;
+const feedback = [
+  {
+    href: "/customers-feedback-gallery",
+    link: "Customer's Feedback",
+  },
+];
+
+export { links, termsCondition, feedback };
