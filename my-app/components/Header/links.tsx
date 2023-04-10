@@ -1,22 +1,3 @@
-const links = [
-  {
-    href: "/",
-    link: "Home",
-  },
-  {
-    href: "/",
-    link: "Buy Online",
-  },
-  {
-    href: "/",
-    link: "Customize",
-  },
-  {
-    href: "/",
-    link: "Party Supplies",
-  },
-];
-
 const termsCondition = [
   {
     href: "/collection-and-delivery",
@@ -47,4 +28,13 @@ const feedback = [
   },
 ];
 
-export { links, termsCondition, feedback };
+const buyOnline = [
+  { href: "/pet-korean-cakes", link: "Plain Cake Collection" },
+  { href: "/party-hat-pet-design-cake", link: "Party Hat Collection" },
+  { href: "/3d-figurine-cakes", link: "3D Cake Collection" },
+  { href: "/pet-pupcake", link: "Pupcakes" },
+  { href: "/non-cake-treats", link: "Non-Cake Treats" },
+  { href: "/cake-pupcake-set", link: "Bundle Sets" },
+];
+
+export { termsCondition, feedback, buyOnline };
