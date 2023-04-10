@@ -79,9 +79,9 @@ const Header = () => {
           <div className="hidden lg:flex justify-around items-end space-x-10 mt-8">
             <Link
               href={"/"}
-              onClick={() => handleClick(1)}
+              onClick={() => handleClick(0)}
               className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${
-                active === 1 && "border-t-4 border-primary text-primary"
+                active === 0 && "border-t-4 border-primary text-primary"
               }`}
             >
               Home
@@ -148,7 +148,7 @@ const Header = () => {
             </div>
             <Link
               href={"/contact"}
-              onClick={() => handleClick(4)}
+              onClick={() => handleClick(6)}
               className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${
                 active === 6 && "border-t-4 border-primary text-primary"
               }`}
@@ -159,7 +159,9 @@ const Header = () => {
               <p
                 onMouseOver={() => handleMouseOn(7)}
                 onMouseLeave={handleMouseOff}
-                className="cursor-pointer text-xl font-poppin uppercase p-2  font-semibold hover:text-primary "
+                className={`cursor-pointer text-xl font-poppin uppercase p-2  font-semibold hover:text-primary${
+                  active === 7 && "border-t-4 border-primary text-primary"
+                } `}
               >
                 T & C
               </p>
@@ -175,7 +177,7 @@ const Header = () => {
                       href={item.href}
                       className="text-xl font-poppin uppercase p-2 hover:text-black"
                     >
-                      {item.link}
+                      <div onClick={() => handleClick(7)}>{item.link}</div>
                     </Link>
                   ))}
                 </ul>
