@@ -11,7 +11,7 @@ const CollectionAndDelivery = () => {
           <p>Terms & conditions for Petissier.sg are detailed below.</p>
           <p>
             By making payment, it will be deemed that the terms are understood
-            and accepted as applying to your order.{" "}
+            and accepted as applying to your order.
           </p>
         </div>
       </div>

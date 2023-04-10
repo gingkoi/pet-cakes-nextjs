@@ -227,27 +227,20 @@ const Header = () => {
                   </ul>
                 )}
               </div>
-              <div className="flex flex-col justify-center relative">
-                <p
-                  onClick={() => handleNav(3)}
-                  className={`text-3xl font-poppin uppercase p-2 text-white font-black tracking-wider`}
-                >
-                  {navClick === 3 ? "-" : "+"} About
-                </p>
-                {navClick === 3 && (
-                  <ul className="flex flex-col bg-primary text-white text-base font-poppin font-medium uppercase w-full text-center transition_nav">
-                    {feedback.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={item.href}
-                        className="text-xl font-poppin uppercase p-2 hover:text-black"
-                      >
-                        <div onClick={closeNav}>{item.link}</div>
-                      </Link>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              <Link
+                href={"/about"}
+                onClick={() => handleClick(1)}
+                className={`text-3xl font-poppin uppercase p-2 text-white font-black tracking-wider`}
+              >
+                <div onClick={closeNav}>About Us</div>
+              </Link>
+              <Link
+                href={"/"}
+                onClick={() => handleClick(1)}
+                className={`text-3xl font-poppin uppercase p-2 text-white font-black tracking-wider`}
+              >
+                <div onClick={closeNav}>Gallery</div>
+              </Link>
               <Link
                 href={"/contact"}
                 className={`text-3xl font-poppin uppercase p-2 text-white font-black tracking-wider`}
