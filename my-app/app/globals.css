@@ -18,3 +18,16 @@
 .transition_nav {
   animation: transitionIn 0.55s;
 }
+
+.midheroBG {
+  background-color: #ffffff;
+  opacity: 1;
+  background-image: radial-gradient(#66d2bc 2px, #ffffff 0.8px);
+  background-size: 16px 16px;
+}
+.othersBG {
+  background-color: #ffffff;
+  opacity: 1;
+  background-image: radial-gradient(#66d2bc 0.7px, #ffffff 0.8px);
+  background-size: 16px 16px;
+}

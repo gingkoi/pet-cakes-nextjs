@@ -1,26 +1,26 @@
 const links = [
   {
-    href: "/",
+    href: "/terms-and-conditions",
     link: "Terms & Condition",
   },
   {
-    href: "/",
+    href: "/collection-and-delivery",
     link: "Collection & Delivery",
   },
   {
-    href: "/",
+    href: "/return-refund-policy",
     link: "Return & Refund Policy",
   },
   {
-    href: "/",
+    href: "/privacy-policy",
     link: "Privacy Policy",
   },
   {
-    href: "/",
+    href: "/faq",
     link: "FAQs",
   },
   {
-    href: "/",
+    href: "/contact",
     link: "Contact Us",
   },
 ];

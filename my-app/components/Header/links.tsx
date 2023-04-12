@@ -23,7 +23,7 @@ const termsCondition = [
 
 const feedback = [
   {
-    href: "/customers-feedback-gallery",
+    href: "/about/gallery",
     link: "Customer's Feedback",
   },
 ];

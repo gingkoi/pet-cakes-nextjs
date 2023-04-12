@@ -41,13 +41,15 @@ const Header = () => {
         <div className="lg:max-w-[1600px] mx-auto pt-6">
           <div className="grid lg:grid-cols-3 lg:justify-between justify-center">
             <div>
-              <Image
-                src={"/Petisserie logo.png"}
-                width={160}
-                height={160}
-                alt="Petisserie Logo"
-                priority
-              />
+              <Link href="/">
+                <Image
+                  src={"/Petisserie logo.png"}
+                  width={160}
+                  height={160}
+                  alt="Petisserie Logo"
+                  priority
+                />
+              </Link>
             </div>
             <Link
               href={"/"}
