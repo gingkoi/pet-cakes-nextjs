@@ -6,7 +6,7 @@ const MidProducts = () => {
   return (
     <div className="font-poppin midheroBG">
       <div className="bg-primary text-white flex justify-center items-center py-8">
-        <p className="text-2xl text-center lg:text-4xl font-bold uppercase">
+        <p className="text-2xl text-center lg:text-5xl font-bold uppercase font-oleo">
           Our Pet Cakes & Pupcakes
         </p>
       </div>
@@ -15,8 +15,7 @@ const MidProducts = () => {
           {product.map((item, index) => (
             <div className="flex flex-col items-center space-y-3 group">
               <a
-                href={"/"}
-                target="blank"
+                href={item.link}
                 className="relative w-full h-[470px] rounded-2xl overflow-hidden border-4 border-primary"
                 key={index}
               >
@@ -28,9 +27,8 @@ const MidProducts = () => {
                 />
               </a>
               <a
-                href="/"
-                target="blank"
-                className="bg-primary text-white p-5 font-bold text-xl rounded-2xl"
+                href={item.link}
+                className="bg-primary text-white p-5 font-bold text-xl rounded-2xl group-hover:scale-105 duration-300"
               >
                 {item.description}
               </a>

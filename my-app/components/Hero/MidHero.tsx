@@ -1,11 +1,16 @@
 import React from "react";
+import { MdOutlinePets } from "react-icons/md";
 
 const MidHero = () => {
   return (
     <div className="midheroBG">
       <div className="max-w-[1240px] mx-auto lg:py-20 p-6 font-poppin">
         <div className="grid lg:grid-cols-2 gap-5">
-          <div className="bg-primary lg:max-w-[450px] max-w-[200px] mx-auto p-4 rounded-xl hover:scale-105 duration-300">
+          <div className="bg-primary md:max-w-[450px] max-w-[200px] mx-auto p-4 rounded-xl hover:scale-105 duration-300 relative">
+            <MdOutlinePets
+              className="absolute lg:bottom-[5%] right-[5%] text-white"
+              size={30}
+            />
             <h1 className=" lg:text-5xl text-2xl font-bold text-white">
               CAKES & BAKES MADE FROM FRESHEST, NATURAL, PART-ORGANIC
               INGREDIENTS

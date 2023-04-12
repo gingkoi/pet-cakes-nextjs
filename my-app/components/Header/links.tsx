@@ -29,7 +29,7 @@ const feedback = [
 ];
 
 const buyOnline = [
-  { href: "/pet-korean-cakes", link: "Plain Cake Collection" },
+  { href: "/products/pet-korean-cakes", link: "Plain Cake Collection" },
   { href: "/party-hat-pet-design-cake", link: "Party Hat Collection" },
   { href: "/3d-figurine-cakes", link: "3D Cake Collection" },
   { href: "/pet-pupcake", link: "Pupcakes" },

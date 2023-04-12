@@ -9,7 +9,6 @@ import { useState } from "react";
 import { termsCondition, feedback, buyOnline } from "./links";
 
 const Header = () => {
-  const [active, setActive] = useState(0);
   const [mouse, setMouse] = useState(0);
   const [nav, setNav] = useState(false);
   const [navClick, setNavClick] = useState(0);
@@ -18,9 +17,6 @@ const Header = () => {
     setNavClick(index);
   };
 
-  const handleClick = (index: number) => {
-    setActive(index);
-  };
   const handleToggle = () => {
     setNav(!nav);
   };
@@ -81,22 +77,16 @@ const Header = () => {
           <div className="hidden lg:flex justify-around items-end space-x-10 mt-8">
             <Link
               href={"/"}
-              onClick={() => handleClick(0)}
-              className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${
-                active === 0 && "border-t-4 border-primary text-primary"
-              }`}
+              className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary`}
             >
               Home
             </Link>
             <div className="flex justify-center relative">
               <Link
-                href={"/buy-online"}
-                onClick={() => handleClick(4)}
+                href={"/products"}
                 onMouseOver={() => handleMouseOn(4)}
                 onMouseLeave={handleMouseOff}
-                className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${
-                  active === 4 && "border-t-4 border-primary text-primary"
-                }`}
+                className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary`}
               >
                 Buy Online
               </Link>
@@ -121,12 +111,9 @@ const Header = () => {
             <div className="flex justify-center relative">
               <Link
                 href={"/about"}
-                onClick={() => handleClick(5)}
                 onMouseOver={() => handleMouseOn(5)}
                 onMouseLeave={handleMouseOff}
-                className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${
-                  active === 5 && "border-t-4 border-primary text-primary"
-                }`}
+                className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary`}
               >
                 About
               </Link>
@@ -150,10 +137,7 @@ const Header = () => {
             </div>
             <Link
               href={"/contact"}
-              onClick={() => handleClick(6)}
-              className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary ${
-                active === 6 && "border-t-4 border-primary text-primary"
-              }`}
+              className={`text-xl font-poppin uppercase p-2  font-semibold hover:text-primary`}
             >
               Contact Us
             </Link>
@@ -161,9 +145,7 @@ const Header = () => {
               <p
                 onMouseOver={() => handleMouseOn(7)}
                 onMouseLeave={handleMouseOff}
-                className={`cursor-pointer text-xl font-poppin uppercase p-2  font-semibold hover:text-primary${
-                  active === 7 && "border-t-4 border-primary text-primary"
-                } `}
+                className={`cursor-pointer text-xl font-poppin uppercase p-2  font-semibold hover:text-primary`}
               >
                 T & C
               </p>
@@ -179,7 +161,7 @@ const Header = () => {
                       href={item.href}
                       className="text-xl font-poppin uppercase p-2 hover:text-black"
                     >
-                      <div onClick={() => handleClick(7)}>{item.link}</div>
+                      <div>{item.link}</div>
                     </Link>
                   ))}
                 </ul>
@@ -203,7 +185,6 @@ const Header = () => {
             <div className="border border-black flex flex-col w-screen h-screen justify-center items-center ">
               <Link
                 href={"/"}
-                onClick={() => handleClick(1)}
                 className={`text-3xl font-poppin uppercase p-2 text-white font-black tracking-wider`}
               >
                 <div onClick={closeNav}>Home</div>
@@ -231,14 +212,12 @@ const Header = () => {
               </div>
               <Link
                 href={"/about"}
-                onClick={() => handleClick(1)}
                 className={`text-3xl font-poppin uppercase p-2 text-white font-black tracking-wider`}
               >
                 <div onClick={closeNav}>About Us</div>
               </Link>
               <Link
                 href={"/"}
-                onClick={() => handleClick(1)}
                 className={`text-3xl font-poppin uppercase p-2 text-white font-black tracking-wider`}
               >
                 <div onClick={closeNav}>Gallery</div>

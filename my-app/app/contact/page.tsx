@@ -1,8 +1,58 @@
+"use client";
 import Socials from "@/components/Socials";
-import React from "react";
 import { BsWhatsapp, BsTelephoneFill } from "react-icons/bs";
+import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
+  const initialValues: { name: string; email: string; phoneNumber: string } = {
+    name: "",
+    email: "",
+    phoneNumber: "",
+  };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors]: any = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e: any) => {
+    const { name, value }: { name: string; value: string } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+  };
+
+  useEffect(() => {}, [formErrors]);
+  const validate = (values: any) => {
+    const errors: any = {};
+    if (!values.name) {
+      errors.name = "Name is required";
+    }
+    if (!values.email) {
+      errors.email = "Email is required";
+    }
+    if (!values.phoneNumber) {
+      errors.phoneNumber = "Phone number is required";
+    }
+    return errors;
+  };
+  const notify = () =>
+    toast.success("Your message has been received!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  Object.keys(formErrors).length === 0 && isSubmit ? notify() : null;
+
   return (
     <div className="transition_nav othersBG">
       <div className="lg:max-w-[800px] lg:mx-auto font-poppin pt-24 pb-10 px-5">
@@ -10,29 +60,47 @@ const Contact = () => {
           Contact Us
         </h1>
         <form
-          action=""
+          onSubmit={handleSubmit}
           className="bg-primary p-8 rounded-2xl my-5 grid grid-cols-2 gap-3 max-w-[600px] mx-auto"
         >
           <div className="col-span-2">
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full p-3 focus:outline-none rounded-lg"
+              name="name"
+              className={`w-full p-3 focus:outline-none rounded-lg ${
+                formErrors.name && "border-2 border-[#ff5d5c]"
+              }`}
+              value={formValues.name}
+              onChange={handleChange}
             />
+            <p className="text-sm text-[#ff5347]">{formErrors.name}</p>
           </div>
           <div className="col-span-1">
             <input
-              type="text"
+              type="email"
               placeholder="Email"
-              className="w-full p-3 focus:outline-none rounded-lg"
+              name="email"
+              value={formValues.email}
+              onChange={handleChange}
+              className={`w-full p-3 focus:outline-none rounded-lg ${
+                formErrors.email && "border-2 border-[#ff5d5c]"
+              }`}
             />
+            <p className="text-sm text-[#ff5347]">{formErrors.email}</p>
           </div>
           <div className="col-span-1">
             <input
               type="text"
               placeholder="Phone number"
-              className="w-full p-3 focus:outline-none rounded-lg"
+              name="phoneNumber"
+              value={formValues.phoneNumber}
+              onChange={handleChange}
+              className={`w-full p-3 focus:outline-none rounded-lg ${
+                formErrors.phoneNumber && "border-2 border-[#ff5d5c]"
+              }`}
             />
+            <p className="text-sm text-[#ff5347]">{formErrors.phoneNumber}</p>
           </div>
           <textarea
             id="w3review"
@@ -42,9 +110,24 @@ const Contact = () => {
             placeholder="Enter your message"
             className="col-span-2 p-3 focus:outline-none rounded-lg"
           ></textarea>
-          <button className="bg-white text-primary p-3 col-span-2 font-bold hover:bg-primary hover:text-white hover:outline outline-white rounded-lg ease-out duration-100">
-            Submit
-          </button>
+          <input
+            value="Submit"
+            type="submit"
+            className="bg-white text-primary p-3 col-span-2 font-bold hover:bg-primary hover:text-white hover:outline outline-white rounded-lg ease-out duration-100 cursor-pointer"
+          />
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            icon={true}
+          />
         </form>
         <div className="my-10">
           <p className="text-center text-2xl font-semibold">

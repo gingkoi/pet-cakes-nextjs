@@ -8,7 +8,7 @@ import ImageSlider from "@/components/ImageSlider";
 export default function Home() {
   return (
     <main className="transition_nav">
-      <div className="lg:h-[550px] h-[200px] relative border-b-4 border-primary">
+      <div className="lg:h-[550px] md:h-[350px] h-[200px] relative border-b-4 border-primary">
         <ImageSlider />
       </div>
       <MidHero />
